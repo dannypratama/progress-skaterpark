@@ -1,1 +1,1 @@
-# progress-skaterpark
+Progress Skaterpark★ adalah sebuah website yang menampilkan layanan kursus skateboard dan fasilitas taman bermain skateboard. Website ini menggunakan bahasa pemrograman HTML, CSS, dan JavaScript, serta framework Bootstrap. Website ini dapat diakses melalui tautan berikut: [https://github.com/skaterpark/website]
