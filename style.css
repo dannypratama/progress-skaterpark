@@ -293,7 +293,7 @@ section {
   padding-top: 2rem;
 }
 
-.home #col-home-1 {
+.home .col-home-1 {
   padding: 3rem;
   padding-top: 5rem;
 }
@@ -320,11 +320,7 @@ section {
   text-align: left;
 }
 
-.home button a {
-  color: var(--white);
-}
-
-.home #col-home-2 {
+.home .col-home-2 {
   padding: 3rem;
 }
 
@@ -542,24 +538,24 @@ section {
   opacity: 1;
 }
 
-.shop .wrapper #title-brand {
+.shop .wrapper .title-brand {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 800;
   padding-bottom: 3px;
 }
 
-.shop .wrapper #title-brand span {
+.shop .wrapper .title-brand span {
   color: var(--primary);
   margin: 0;
 }
 
-.shop #skate-icon {
+.shop .skate-icon {
   display: block;
   margin: 0;
 }
 
-.shop #skate-icon svg {
+.shop .skate-icon svg {
   margin-top: 1rem;
   padding-left: 0;
 }
@@ -683,7 +679,7 @@ section {
   color: var(--black);
 }
 
-.shop #card-shop {
+.shop .card-shop {
   transform: scale(0.8);
   padding-top: 0;
 }
@@ -857,9 +853,10 @@ footer {
     display: none;
   }
 
-  /* Shop */
-  .shop #shop-section {
-    display: none;
+  /* Kartu produk: satu kartu memenuhi lebar baris, sama seperti tampilan mobile lama */
+  .shop .card-shop {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .shop .right {
@@ -890,11 +887,6 @@ footer {
 @media only screen and (min-width: 750px) {
   /* Gallery */
   .container-gallery-mobile {
-    display: none;
-  }
-
-  /* Shop */
-  .shop #shop-section-mobile {
     display: none;
   }
 

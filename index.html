@@ -34,8 +34,59 @@
     />
   </head>
   <body>
+    <!-- Sprite SVG: satu definisi ikon skateboard, dipakai ulang di semua kartu produk -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none" aria-hidden="true">
+      <symbol id="icon-skateboard" viewBox="0 0 24 24">
+        <path
+          d="M5 19L7.33333 20L16.6667 20L19 19"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M8 22.01L8.01 21.9989"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M16 22.01L16.01 21.9989"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M9.54875 13.3445L8.30818 14.1716H5"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M15.1653 9.20935H17.887"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+    </svg>
+
     <!-- Navbar Section -->
-    <nav class="nav navbar navbar-expand-sm row">
+    <nav
+      class="nav navbar navbar-expand-sm row"
+      aria-label="Navigasi utama"
+    >
       <div class="container fixed-top" id="navbar-bg">
         <div class="menu-left col d-none d-md-block">
           <ul class="menu navbar-nav">
@@ -97,9 +148,12 @@
 
     <!-- Tab Bar Section -->
     <section>
-      <nav class="tabbar navbar-footer fixed-bottom py-0 d-block d-md-none">
+      <nav
+        class="tabbar navbar-footer fixed-bottom py-0 d-block d-md-none"
+        aria-label="Navigasi mobile"
+      >
         <div class="container-fluid">
-          <div class="row no-gutters">
+          <div class="row g-0">
             <div class="col">
               <a href="#home" class="active">
                 <i class="ri-home-3-line"></i> Home
@@ -124,137 +178,188 @@
 
     <!-- Home Section -->
     <section class="home" id="home">
-      <div class="container mt-3" id="container-home">
+      <div class="container mt-3">
         <div class="row">
-          <div class="col-lg-7" id="col-home-1">
-            <h1 id="h1-home">
+          <div class="col-lg-7 col-home-1">
+            <h1>
               Progress <i class="ri-star-s-fill"></i> Skatepark
             </h1>
-            <h2 id="h1-home-2">EMPOWERING THE YOUTH THROUGH SKATEBOARDING</h2>
-            <p id="p-home">
+            <h2>EMPOWERING THE YOUTH THROUGH SKATEBOARDING</h2>
+            <p>
               Progress Skatepark adalah tempat yang menginspirasi untuk
               mempelajari trik baru, berkumpul dengan teman dan keluarga,
               menikmati makanan ringan dan minuman, serta bersenang-senang.
             </p>
-            <button class="btn btn-danger" id="btn-home">
-              <a href="#about" id="link">Baca lebih lanjut</a>
-            </button>
+            <a class="btn btn-danger" href="#about">Baca lebih lanjut</a>
           </div>
-          <div class="col-lg-5 p-4" id="col-home-2">
-            <form class="bg-white p-3 rounded-3 bg-opacity-75">
+          <div class="col-lg-5 p-4 col-home-2">
+            <form
+              id="form-booking"
+              class="bg-white p-3 rounded-3 bg-opacity-75"
+              novalidate
+            >
               <h4 class="mb-3">
                 Pesan kursus privat skateboarding <i class="ri-star-s-fill"></i>
               </h4>
 
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default"
-                  ><i class="ri-user-3-fill"></i
-                ></span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nama"
-                  required
-                />
+              <div class="alert alert-success d-none form-alert" role="alert">
+                Permintaan kursus privat berhasil dikirim. Kami akan
+                menghubungi kamu segera.
               </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default"
-                  ><i class="ri-mail-fill"></i
-                ></span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Email"
-                  required
-                />
+
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="ri-user-3-fill"></i
+                  ></span>
+                  <input
+                    type="text"
+                    name="nama"
+                    class="form-control"
+                    placeholder="Nama"
+                    aria-label="Nama"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">Nama wajib diisi.</div>
               </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default"
-                  ><i class="ri-phone-fill"></i
-                ></span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nomor telepon"
-                  required
-                />
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="ri-mail-fill"></i
+                  ></span>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Email"
+                    aria-label="Email"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">
+                  Masukkan alamat email yang valid.
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="ri-phone-fill"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    name="telepon"
+                    class="form-control"
+                    placeholder="Nomor telepon"
+                    aria-label="Nomor telepon"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">
+                  Masukkan nomor telepon yang valid.
+                </div>
               </div>
               <hr />
 
-              <div class="row">
-                <div class="col-md input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
                     ><i class="ri-time-line"></i
                   ></span>
                   <input
                     placeholder="Waktu reservasi"
                     class="form-control"
                     type="text"
-                    onfocus="(this.type='time')"
-                    onblur="(this.type='time')"
-                    id="date"
+                    data-swap-to="time"
+                    name="waktu"
+                    id="reservation-time"
+                    aria-label="Waktu reservasi"
                     required
                   />
                 </div>
+                <div class="invalid-feedback">Waktu reservasi wajib diisi.</div>
+              </div>
 
-                <div class="col-md input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
                     ><i class="ri-calendar-todo-line"></i
                   ></span>
                   <input
                     placeholder="Tanggal reservasi"
                     class="form-control"
                     type="text"
-                    onfocus="(this.type='date')"
-                    onblur="(this.type='date')"
-                    id="date"
+                    data-swap-to="date"
+                    name="tanggal"
+                    id="reservation-date"
+                    aria-label="Tanggal reservasi"
                     required
                   />
                 </div>
+                <div class="invalid-feedback">
+                  Tanggal reservasi wajib diisi dan tidak boleh lampau.
+                </div>
               </div>
 
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default"
-                  ><i class="ri-user-add-line"></i
-                ></span>
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Jumlah orang"
-                  required
-                />
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="ri-user-add-line"></i
+                  ></span>
+                  <input
+                    type="number"
+                    name="jumlah-orang"
+                    class="form-control"
+                    placeholder="Jumlah orang"
+                    aria-label="Jumlah orang"
+                    min="1"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">Isi jumlah orang (minimal 1).</div>
               </div>
 
               <hr />
 
-              <label class="mb-2" style="font-weight: bold"
+              <label class="mb-2" style="font-weight: bold" for="tingkat"
                 >Tingkat pelatihan skateboard
                 <span style="color: var(--primary)">*</span></label
               >
 
-              <select class="form-select mb-3" required>
-                <option selected disabled="disabled">
-                  Pilih tingkat pelatihan
-                </option>
-                <option value="1">Starter : ★</option>
-                <option value="2">Super : ★ ★</option>
-                <option value="3">Monster : ★ ★ ★</option>
-              </select>
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  name="tingkat"
+                  id="tingkat"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Pilih tingkat pelatihan
+                  </option>
+                  <option value="1">Starter : ★</option>
+                  <option value="2">Super : ★ ★</option>
+                  <option value="3">Monster : ★ ★ ★</option>
+                </select>
+                <div class="invalid-feedback">Pilih tingkat pelatihan.</div>
+              </div>
 
               <div class="mb-3">
-                <label style="font-weight: bold" class="form-label"
+                <label
+                  style="font-weight: bold"
+                  class="form-label"
+                  for="catatan"
                   >Catatan</label
                 >
                 <textarea
                   class="form-control"
                   rows="3"
+                  name="catatan"
+                  id="catatan"
                   placeholder="Beri tahu kami hal lain yang mungkin penting"
                 ></textarea>
               </div>
 
-              <button class="btn btn-danger" id="btn-home">
-                <a>Kirim</a>
-              </button>
+              <button type="submit" class="btn btn-danger">Kirim</button>
             </form>
           </div>
         </div>
@@ -264,7 +369,7 @@
     <!-- About Section -->
     <section class="about" id="about">
       <!-- Title -->
-      <div class="container mt-5 py-md-3" id="title-section">
+      <div class="container mt-5 py-md-3 title-section">
         <div class="row mt-5">
           <div class="col text-center">
             <h1 class="title fw-bold">
@@ -345,7 +450,7 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
       <!-- Title -->
-      <div class="container mt-5 py-md-3" id="title-section">
+      <div class="container mt-5 py-md-3 title-section">
         <div class="row mt-5">
           <div class="col text-center">
             <h1 class="title fw-bold">
@@ -387,100 +492,144 @@
           <div class="col">
             <div class="gallery-scroll">
               <div class="img-wrapper slower">
-                <a target="_blank" rel="noopener"
-                  ><img
+                <a
+                  href="https://images.unsplash.com/photo-1547447134-cd3f5c716030"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
                     src="https://images.unsplash.com/photo-1547447134-cd3f5c716030"
-                    alt=""
+                    alt="Foto galeri skatepark 1"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper faster">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1458080767772-b1011d305557"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1458080767772-b1011d305557"
-                    alt=""
+                    alt="Foto galeri skatepark 2"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower vertical">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1641503070352-54f3ff29b253"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1641503070352-54f3ff29b253"
-                    alt=""
+                    alt="Foto galeri skatepark 3"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower slower-down">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1489614389547-f2209ef4b321"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1489614389547-f2209ef4b321"
-                    alt=""
+                    alt="Foto galeri skatepark 4"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1525909002-1b05e0c869d8"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1525909002-1b05e0c869d8"
-                    alt=""
+                    alt="Foto galeri skatepark 5"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1600876670541-ad960ed66b02"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1600876670541-ad960ed66b02"
-                    alt=""
+                    alt="Foto galeri skatepark 6"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper faster1">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1654106803795-2a0034bcef51"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1654106803795-2a0034bcef51"
-                    alt=""
+                    alt="Foto galeri skatepark 7"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower slower2">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1591574594784-25669837e41c"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1591574594784-25669837e41c"
-                    alt=""
+                    alt="Foto galeri skatepark 8"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1495921258158-db2d5a45cb02"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1495921258158-db2d5a45cb02"
-                    alt=""
+                    alt="Foto galeri skatepark 9"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1503417680882-163c1609fd2f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1503417680882-163c1609fd2f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
+                    alt="Foto galeri skatepark 10"
                   />
                 </a>
               </div>
 
               <div class="img-wrapper slower last">
-                <a target="_blank" rel="noopener">
+                <a
+                  href="https://images.unsplash.com/photo-1564485986486-06f447a399d8"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="https://images.unsplash.com/photo-1564485986486-06f447a399d8"
-                    alt=""
+                    alt="Foto galeri skatepark 11"
                   />
                 </a>
               </div>
@@ -491,10 +640,15 @@
 
       <!-- Gallery Mobile -->
 
-      <div class="container-gallery-mobile p-5 text-center" id="gallery">
+      <div class="container-gallery-mobile p-5 text-center">
         <div class="row gallery-content">
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1458080767772-b1011d305557"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1458080767772-b1011d305557"
@@ -503,7 +657,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1547447134-cd3f5c716030"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1547447134-cd3f5c716030"
@@ -512,7 +671,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1641503070352-54f3ff29b253"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1641503070352-54f3ff29b253"
@@ -521,7 +685,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1489614389547-f2209ef4b321"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1489614389547-f2209ef4b321"
@@ -530,7 +699,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1525909002-1b05e0c869d8"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1525909002-1b05e0c869d8"
@@ -539,7 +713,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1600876670541-ad960ed66b02"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1600876670541-ad960ed66b02"
@@ -548,7 +727,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1591574594784-25669837e41c"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1591574594784-25669837e41c"
@@ -557,7 +741,12 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-6">
-            <a class="d-block mb-4 h-100">
+            <a
+              class="d-block mb-4 h-100"
+              href="https://images.unsplash.com/photo-1654106803795-2a0034bcef51"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 class="img-fluid img-thumbnail"
                 src="https://images.unsplash.com/photo-1654106803795-2a0034bcef51"
@@ -582,7 +771,7 @@
     <!-- Shop Section -->
     <section class="shop" id="shop">
       <!-- Title -->
-      <div class="container mt-0 py-md-3" id="title-section">
+      <div class="container mt-0 py-md-3 title-section">
         <div class="row pt-5">
           <div class="col text-center">
             <h1 class="title fw-bold">
@@ -595,65 +784,24 @@
       </div>
 
       <div class="container g-2" id="shop-section">
+        <!-- Kartu produk tampil satu baris di desktop, ditumpuk penuh di mobile lewat CSS -->
         <div class="row">
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Progress Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Progress Skateboards<span>★</span></h1>
                   <h1>Cristiano Ronaldo</h1>
                   <p>7.7 deck<span>2015</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
 
@@ -682,65 +830,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Habitat Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Habitat Skateboards<span>★</span></h1>
 
                   <h1>Pink Floyd DSOTM</h1>
                   <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 13.257.000</p>
@@ -769,65 +875,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Santa Cruz Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Santa Cruz Skateboards<span>★</span></h1>
 
                   <h1>Wolverine Hand</h1>
                   <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 2.875.000</p>
@@ -858,67 +922,25 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">
+                  <h1 class="title-brand">
                     Powell Peralta Skateboards<span>★</span>
                   </h1>
 
                   <h1>Hot Rod Flames</h1>
                   <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 1.638.000</p>
@@ -949,64 +971,22 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Piso<br />Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Piso<br />Skateboards<span>★</span></h1>
                   <h1>Flyin Munki</h1>
                   <p>7.7 deck<span>2015</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
 
@@ -1037,65 +1017,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">RIPNDIP Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">RIPNDIP Skateboards<span>★</span></h1>
 
                   <h1>Lord Nermal</h1>
                   <p>8.2 deck<span>2020</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 1.853.000</p>
@@ -1126,65 +1064,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Flip<br />Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Flip<br />Skateboards<span>★</span></h1>
 
                   <h1>Penny Blacklight</h1>
                   <p>7.5 deck<span>2019</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 2.135.000</p>
@@ -1216,65 +1112,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg col-md-4 col-6" id="card-shop">
+          <div class="col-lg col-md-4 col-6 card-shop">
             <div class="wrapper">
               <div class="card">
                 <div class="front">
-                  <h1 id="title-brand">Baker<br />Skateboards<span>★</span></h1>
+                  <h1 class="title-brand">Baker<br />Skateboards<span>★</span></h1>
 
                   <h1>Casper But Like More Deck</h1>
                   <p>8.5 deck<span>2023</span></p>
-                  <p id="skate-icon">
+                  <p class="skate-icon">
                     <svg
                       width="140"
                       height="140"
                       stroke-width="1.4"
-                      viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
+                      <use href="#icon-skateboard"></use>
                     </svg>
                   </p>
                   <p class="price">Rp 1.255.000</p>
@@ -1291,739 +1145,6 @@
                     <li>Nose 6.875"</li>
                     <li>Tail 6.25"</li>
                   </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/W2tfjZb/deck-skull.png"
-                  alt="deck-skull"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container g-2" id="shop-section-mobile">
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Progress Skateboards<span>★</span></h1>
-                  <h1>Cristiano Ronaldo</h1>
-                  <p>7.7 deck<span>2015</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-
-                  <p class="price">Rp 7.000.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Desain simpel dan elegan dengan warna merah, biru dan
-                    pastinya dengan foto sang mega bintang.
-                  </p>
-                  <ul>
-                    <li>Width 7.7"</li>
-                    <li>Length 37.75"</li>
-                    <li>Wheelbase 17"</li>
-                    <li>Nose 7.805"</li>
-                    <li>Tail 7.05"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img src="https://i.ibb.co.com/LPYhB73/deck-cr.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Habitat Skateboards<span>★</span></h1>
-
-                  <h1>Pink Floyd DSOTM</h1>
-                  <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 13.257.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Desain menampilkan prisma yang memecah cahaya putih menjadi
-                    spektrum warna pelangi.
-                  </p>
-                  <ul>
-                    <li>Width 8.2"</li>
-                    <li>Length 32.73"</li>
-                    <li>Wheelbase 13"</li>
-                    <li>Nose 6.275"</li>
-                    <li>Tail 7.45"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img src="https://i.ibb.co.com/RTjQpRQ/deck-floyd.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Santa Cruz Skateboards<span>★</span></h1>
-
-                  <h1>Wolverine Hand</h1>
-                  <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 2.875.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Desain menampilkan karakter Marvel Wolverine dengan tangan
-                    menyerupai logo Santa Cruz.
-                  </p>
-                  <ul>
-                    <li>Width 7.1"</li>
-                    <li>Length 30.75"</li>
-                    <li>Wheelbase 14"</li>
-                    <li>Nose 5.875"</li>
-                    <li>Tail 6.25"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/vxpkqdZ/deck-wolverine.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">
-                    Powell Peralta Skateboards<span>★</span>
-                  </h1>
-
-                  <h1>Hot Rod Flames</h1>
-                  <p>7.7 deck<span>2018</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 1.638.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Memiliki bentuk yang cocok untuk vert dan street, dengan
-                    grafis api yang berwarna merah.
-                  </p>
-                  <ul>
-                    <li>Width 7.8"</li>
-                    <li>Length 31.45"</li>
-                    <li>Wheelbase 14"</li>
-                    <li>Nose 6.875"</li>
-                    <li>Tail 6.25"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/fdgbDZC/deck-hotrod.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Piso<br />Skateboards<span>★</span></h1>
-                  <h1>Flyin Munki</h1>
-                  <p>7.7 deck<span>2015</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-
-                  <p class="price">Rp 1.400.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Grafis ini dibuat oleh seniman grafiti Goan 'Flyin Munki'.
-                  </p>
-                  <ul>
-                    <li>Width 8.2"</li>
-                    <li>Length 33.75"</li>
-                    <li>Wheelbase 14"</li>
-                    <li>Nose 6.805"</li>
-                    <li>Tail 7.05"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/y07DYhn/deck-piso.png"
-                  alt="deck-piso"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">RIPNDIP Skateboards<span>★</span></h1>
-
-                  <h1>Lord Nermal</h1>
-                  <p>8.2 deck<span>2020</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 1.853.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    RIPNDIP Lord Nermal, dengan logo kucing yang terkenal dengan
-                    jari tengahnya ke atas.
-                  </p>
-                  <ul>
-                    <li>Width 8.2"</li>
-                    <li>Length 32.73"</li>
-                    <li>Wheelbase 13"</li>
-                    <li>Nose 6.275"</li>
-                    <li>Tail 7.45"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/6JmJZzF/deck-cat.png"
-                  alt="deck-cat"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Flip<br />Skateboards<span>★</span></h1>
-
-                  <h1>Penny Blacklight</h1>
-                  <p>7.5 deck<span>2019</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 2.135.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    FLIP Penny Blacklight, model pro pengendara Tom Penny,
-                    dengan desain psikedelik mengingatkan kita pada papan mitos
-                    lamanya.
-                  </p>
-                  <ul>
-                    <li>Width 7.5"</li>
-                    <li>Length 30.75"</li>
-                    <li>Wheelbase 14"</li>
-                    <li>Nose 5.875"</li>
-                    <li>Tail 6.25"</li>
-                  </ul>
-                  <a href="./checkout.html"
-                    ><button class="btn-shop" type="button">
-                      <i class="ri-shopping-cart-2-fill"></i></button
-                  ></a>
-                </div>
-              </div>
-              <div class="img-wrapper">
-                <img
-                  src="https://i.ibb.co.com/kg8MZTr/deck-penny.png"
-                  alt="deck-penny"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col" id="card-shop">
-            <div class="wrapper">
-              <div class="card">
-                <div class="front">
-                  <h1 id="title-brand">Baker<br />Skateboards<span>★</span></h1>
-
-                  <h1>Casper But Like More Deck</h1>
-                  <p>8.5 deck<span>2023</span></p>
-                  <p id="skate-icon">
-                    <svg
-                      width="140"
-                      height="140"
-                      stroke-width="1.4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 19L7.33333 20L16.6667 20L19 19"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M8 22.01L8.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M16 22.01L16.01 21.9989"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M7 7.8335C7 7.8335 8.82843 6.91929 10 6.3335C12 5.3335 14.2705 6.90111 14.2705 6.90111L9.96227 10.0363L14 13.3335V17.3335"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M9.54875 13.3445L8.30818 14.1716H5"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M15.1653 9.20935H17.887"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M17 6C18.1046 6 19 5.10457 19 4C19 2.89543 18.1046 2 17 2C15.8954 2 15 2.89543 15 4C15 5.10457 15.8954 6 17 6Z"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </p>
-                  <p class="price">Rp 1.255.000</p>
-                </div>
-                <div class="right">
-                  <p>
-                    Papan ini memiliki ukuran 8.5 inci dan memiliki desain yang
-                    menarik dengan gambar kepala Casper Brooker.
-                  </p>
-                  <ul>
-                    <li>Width 8.5"</li>
-                    <li>Length 31.45"</li>
-                    <li>Wheelbase 14"</li>
-                    <li>Nose 6.875"</li>
-                    <li>Tail 6.25"</li>
-                  </ul>
-
                   <a href="./checkout.html"
                     ><button class="btn-shop" type="button">
                       <i class="ri-shopping-cart-2-fill"></i></button
@@ -2055,7 +1176,7 @@
     <!-- News Section -->
     <section class="news" id="news">
       <!-- Title -->
-      <div class="container mt-5 py-md-3" id="title-section">
+      <div class="container mt-5 py-md-3 title-section">
         <div class="row mt-5">
           <div class="col text-center">
             <h1 class="title fw-bold">
@@ -2264,7 +1385,7 @@
         <div class="row text-center">
           <div class="col">
             <a
-              class="btn btn-danger mb-3 mr-1"
+              class="btn btn-danger mb-3"
               href="#slide-news"
               role="button"
               data-bs-slide="prev"
@@ -2286,7 +1407,7 @@
 
     <section class="contact" id="contact">
       <!-- Title -->
-      <div class="container mt-5 py-md-3" id="title-section">
+      <div class="container mt-5 py-md-3 title-section">
         <div class="row mt-5">
           <div class="col text-center">
             <h1 class="title fw-bold">
@@ -2307,28 +1428,47 @@
             ></iframe>
           </div>
           <div class="col-md formulir-contact">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control py-5" id="floatingInput" />
-              <label for="floatingInput">Nama</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control py-5"
-                id="floatingInput"
-              />
-              <label for="floatingInput">Email</label>
-            </div>
-            <div class="form-floating mb-3">
-              <textarea
-                class="form-control py-5"
-                style="height: 10rem"
-              ></textarea>
-              <label for="floatingInput">Pesan</label>
-            </div>
-            <a href="./checkout.html">
-              <button class="btn btn-danger">Kirim Pesan</button></a
-            >
+            <form id="form-contact" novalidate>
+              <div class="alert alert-success d-none form-alert" role="alert">
+                Pesan berhasil dikirim. Terima kasih!
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control py-5"
+                  id="contact-name"
+                  required
+                />
+                <label for="contact-name">Nama</label>
+                <div class="invalid-feedback">Nama wajib diisi.</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control py-5"
+                  id="contact-email"
+                  required
+                />
+                <label for="contact-email">Email</label>
+                <div class="invalid-feedback">
+                  Masukkan alamat email yang valid.
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  name="pesan"
+                  class="form-control py-5"
+                  style="height: 10rem"
+                  id="contact-message"
+                  required
+                ></textarea>
+                <label for="contact-message">Pesan</label>
+                <div class="invalid-feedback">Pesan wajib diisi.</div>
+              </div>
+              <button type="submit" class="btn btn-danger">Kirim Pesan</button>
+            </form>
           </div>
         </div>
       </div>
@@ -2427,7 +1567,7 @@
                   </li>
                 </ul>
               </div>
-              <h5 class="copyright text-center text-body-primary">
+              <h5 class="copyright text-center">
                 © Danny Pratama <i class="ri-star-s-fill"></i> Progress
                 Skatepark
               </h5>
