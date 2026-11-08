@@ -19,7 +19,9 @@ document.querySelectorAll("[data-swap-to]").forEach((input) => {
 // ---- Tanggal reservasi: tidak boleh di masa lalu ----
 const reservationDate = document.getElementById("reservation-date");
 if (reservationDate) {
-  reservationDate.min = new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const todayLocal = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  reservationDate.min = todayLocal;
 }
 
 // ---- Nomor telepon: validasi format custom ----

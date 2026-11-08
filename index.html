@@ -211,115 +211,111 @@
                 menghubungi kamu segera.
               </div>
 
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-user-3-fill"></i
-                  ></span>
-                  <input
-                    type="text"
-                    name="nama"
-                    class="form-control"
-                    placeholder="Nama"
-                    aria-label="Nama"
-                    required
-                  />
-                </div>
+              <div class="input-group has-validation mb-3">
+                <span class="input-group-text"
+                  ><i class="ri-user-3-fill"></i
+                ></span>
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control"
+                  placeholder="Nama"
+                  aria-label="Nama"
+                  required
+                />
                 <div class="invalid-feedback">Nama wajib diisi.</div>
               </div>
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-mail-fill"></i
-                  ></span>
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Email"
-                    aria-label="Email"
-                    required
-                  />
-                </div>
+              <div class="input-group has-validation mb-3">
+                <span class="input-group-text"
+                  ><i class="ri-mail-fill"></i
+                ></span>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                  aria-label="Email"
+                  required
+                />
                 <div class="invalid-feedback">
                   Masukkan alamat email yang valid.
                 </div>
               </div>
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-phone-fill"></i
-                  ></span>
-                  <input
-                    type="tel"
-                    name="telepon"
-                    class="form-control"
-                    placeholder="Nomor telepon"
-                    aria-label="Nomor telepon"
-                    required
-                  />
-                </div>
+              <div class="input-group has-validation mb-3">
+                <span class="input-group-text"
+                  ><i class="ri-phone-fill"></i
+                ></span>
+                <input
+                  type="tel"
+                  name="telepon"
+                  class="form-control"
+                  placeholder="Nomor telepon"
+                  aria-label="Nomor telepon"
+                  required
+                />
                 <div class="invalid-feedback">
                   Masukkan nomor telepon yang valid.
                 </div>
               </div>
               <hr />
 
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-time-line"></i
-                  ></span>
-                  <input
-                    placeholder="Waktu reservasi"
-                    class="form-control"
-                    type="text"
-                    data-swap-to="time"
-                    name="waktu"
-                    id="reservation-time"
-                    aria-label="Waktu reservasi"
-                    required
-                  />
+              <div class="row">
+                <div class="col-md">
+                  <div class="input-group has-validation mb-3">
+                    <span class="input-group-text"
+                      ><i class="ri-time-line"></i
+                    ></span>
+                    <input
+                      placeholder="Waktu reservasi"
+                      class="form-control"
+                      type="text"
+                      data-swap-to="time"
+                      name="waktu"
+                      id="reservation-time"
+                      aria-label="Waktu reservasi"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Waktu reservasi wajib diisi.
+                    </div>
+                  </div>
                 </div>
-                <div class="invalid-feedback">Waktu reservasi wajib diisi.</div>
+
+                <div class="col-md">
+                  <div class="input-group has-validation mb-3">
+                    <span class="input-group-text"
+                      ><i class="ri-calendar-todo-line"></i
+                    ></span>
+                    <input
+                      placeholder="Tanggal reservasi"
+                      class="form-control"
+                      type="text"
+                      data-swap-to="date"
+                      name="tanggal"
+                      id="reservation-date"
+                      aria-label="Tanggal reservasi"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Tanggal reservasi wajib diisi dan tidak boleh lampau.
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-calendar-todo-line"></i
-                  ></span>
-                  <input
-                    placeholder="Tanggal reservasi"
-                    class="form-control"
-                    type="text"
-                    data-swap-to="date"
-                    name="tanggal"
-                    id="reservation-date"
-                    aria-label="Tanggal reservasi"
-                    required
-                  />
-                </div>
-                <div class="invalid-feedback">
-                  Tanggal reservasi wajib diisi dan tidak boleh lampau.
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="ri-user-add-line"></i
-                  ></span>
-                  <input
-                    type="number"
-                    name="jumlah-orang"
-                    class="form-control"
-                    placeholder="Jumlah orang"
-                    aria-label="Jumlah orang"
-                    min="1"
-                    required
-                  />
-                </div>
+              <div class="input-group has-validation mb-3">
+                <span class="input-group-text"
+                  ><i class="ri-user-add-line"></i
+                ></span>
+                <input
+                  type="number"
+                  name="jumlah-orang"
+                  class="form-control"
+                  placeholder="Jumlah orang"
+                  aria-label="Jumlah orang"
+                  min="1"
+                  required
+                />
                 <div class="invalid-feedback">Isi jumlah orang (minimal 1).</div>
               </div>
 
@@ -1393,16 +1389,18 @@
               href="#slide-news"
               role="button"
               data-bs-slide="prev"
+              aria-label="Berita sebelumnya"
             >
-              <i class="ri-arrow-left-fill"></i>
+              <i class="ri-arrow-left-fill" aria-hidden="true"></i>
             </a>
             <a
               class="btn btn-danger mb-3"
               href="#slide-news"
               role="button"
               data-bs-slide="next"
+              aria-label="Berita berikutnya"
             >
-              <i class="ri-arrow-right-fill"></i>
+              <i class="ri-arrow-right-fill" aria-hidden="true"></i>
             </a>
           </div>
         </div>
