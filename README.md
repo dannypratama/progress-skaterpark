@@ -1,6 +1,6 @@
 # Progress Skaterpark★
 
-Website landing page untuk **Progress Skatepark** — layanan kursus privat
+Website landing page untuk **Progress Skatepark**, layanan kursus privat
 skateboarding dan fasilitas taman bermain skateboard di Kota Tegal, Jawa
 Tengah. Berisi profil skatepark, galeri foto, katalog deck skateboard,
 berita, serta form pemesanan kursus dan kontak.
@@ -30,7 +30,7 @@ berita, serta form pemesanan kursus dan kontak.
 
 ## Menjalankan
 
-Statis — cukup buka `index.html` di browser, atau jalankan server lokal:
+Statis: cukup buka `index.html` di browser, atau jalankan server lokal:
 
 ```bash
 npx serve .
@@ -47,5 +47,4 @@ python -m http.server
 
 ## Author
 
-Danny Pratama Firmansyah — [GitHub](https://github.com/dannypratama) ·
-[Instagram](https://instagram.com/dannypratamaf)
+Danny Pratama Firmansyah ([GitHub](https://github.com/dannypratama) · [Instagram](https://instagram.com/dannypratamaf))

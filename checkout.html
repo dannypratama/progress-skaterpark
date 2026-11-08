@@ -38,8 +38,9 @@
     />
   </head>
   <body>
-    <!-- Navbar Section -->
-    <nav class="nav navbar navbar-expand-sm row">
+    <!-- Header & Navigation -->
+    <header>
+      <nav class="nav navbar navbar-expand-sm row" aria-label="Navigasi utama">
       <div class="container fixed-top" id="navbar-bg">
         <div class="menu-left col d-none d-md-block">
           <ul class="menu navbar-nav">
@@ -98,10 +99,18 @@
         </div>
       </div>
     </nav>
+    </header>
 
     <main>
       <div class="container px-4 py-5" id="featured-3">
-        <div class="row g-4 py-5 mt-5 row-cols-1 row-cols-lg-3 text-center">
+        <div class="text-center pt-5 mt-4">
+          <h1 class="fw-bold">Kanal Pemesanan & Kontak</h1>
+          <p class="text-muted">
+            Hubungi atau beli merchandise resmi Progress Skatepark melalui kanal resmi berikut:
+          </p>
+        </div>
+
+        <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 text-center">
           <div class="feature col">
             <h3 class="fs-2 text-body-emphasis visually-hidden">
               Kontak kami
@@ -157,10 +166,7 @@
           <h5>Alamat</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link"
-                ><i class="ri-map-pin-line"></i>Jl. Pancasila No.66, RT.7/RW.2,
-                Mangkukusuman, Kec. Tegal Timur, Kota Tegal, Jawa Tengah.
-              </a>
+              <span class="nav-link"><i class="ri-map-pin-line" aria-hidden="true"></i>Jl. Pancasila No.66, RT.7/RW.2, Mangkukusuman, Kec. Tegal Timur, Kota Tegal, Jawa Tengah.</span>
             </li>
             <li class="nav-item mb-2">
               <a href="https://wa.me/+6288232548569" class="nav-link"
@@ -179,16 +185,16 @@
           <h5>Perusahaan</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Tentang Progress</a>
+              <a href="index.html#about" class="nav-link">Tentang Progress</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Semua Produk</a>
+              <a href="index.html#shop" class="nav-link">Semua Produk</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Kontak Kami</a>
+              <a href="index.html#contact" class="nav-link">Kontak Kami</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Karir</a>
+              <span class="nav-link text-muted">Karir (Segera Hadir)</span>
             </li>
           </ul>
         </div>
@@ -197,13 +203,13 @@
           <h5>Informasi</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">FAQ</a>
+              <a href="index.html#about" class="nav-link">Fasilitas & Tiket</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Cara Order</a>
+              <a href="checkout.html" class="nav-link">Cara Pemesanan</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link">Kebijakan Privasi</a>
+              <a href="index.html#contact" class="nav-link">Bantuan & Kontak</a>
             </li>
           </ul>
         </div>
@@ -223,14 +229,8 @@
                       ><i class="ri-facebook-circle-fill"></i
                     ></a>
                   </li>
-                  <li class="x">
-                    <a href="#"><i class="ri-twitter-x-line"></i></a>
-                  </li>
-                  <li class="yt">
-                    <a href="#"><i class="ri-youtube-fill"></i></a>
-                  </li>
-                  <li class="tr">
-                    <a href="#"><i class="ri-threads-fill"></i></a>
+                  <li class="wa">
+                    <a href="https://wa.me/+6288232548569" aria-label="WhatsApp Progress Skatepark"><i class="ri-whatsapp-line" aria-hidden="true"></i></a>
                   </li>
                 </ul>
               </div>

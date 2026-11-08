@@ -61,3 +61,21 @@ function wireForm(form) {
   const form = document.querySelector(selector);
   if (form) wireForm(form);
 });
+
+// ---- Kartu produk: aksesibilitas keyboard (Focus/Enter/Space) & sentuh (R-32) ----
+document.querySelectorAll(".shop .card").forEach((card) => {
+  card.addEventListener("focus", () => card.classList.add("is-flipped"));
+  card.addEventListener("blur", (e) => {
+    if (!card.contains(e.relatedTarget)) {
+      card.classList.remove("is-flipped");
+    }
+  });
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      if (document.activeElement === card) {
+        e.preventDefault();
+        card.classList.toggle("is-flipped");
+      }
+    }
+  });
+});

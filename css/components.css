@@ -166,15 +166,24 @@
   font-weight: 300;
 }
 
-.shop .card:hover {
+.shop .card:hover,
+.shop .card:focus,
+.shop .card:focus-within,
+.shop .card.is-flipped {
   transform: translateZ(-100px) translateX(30px) rotateY(-90deg);
 }
 
-.shop .card:hover .front {
+.shop .card:hover .front,
+.shop .card:focus .front,
+.shop .card:focus-within .front,
+.shop .card.is-flipped .front {
   opacity: 0;
 }
 
-.shop .card:hover .right {
+.shop .card:hover .right,
+.shop .card:focus .right,
+.shop .card:focus-within .right,
+.shop .card.is-flipped .right {
   opacity: 1;
 }
 
@@ -245,7 +254,10 @@
   }
 }
 
-.shop .card:hover ~ .img-wrapper img {
+.shop .card:hover ~ .img-wrapper img,
+.shop .card:focus ~ .img-wrapper img,
+.shop .card:focus-within ~ .img-wrapper img,
+.shop .card.is-flipped ~ .img-wrapper img {
   transform: scale(0.9) translateX(100%) translateY(95%) rotateZ(80deg);
 }
 
@@ -290,11 +302,16 @@
   transform-origin: right bottom;
 }
 
-.shop .card:hover .btn-shop {
+.shop .card:hover .btn-shop,
+.shop .card:focus .btn-shop,
+.shop .card:focus-within .btn-shop,
+.shop .card.is-flipped .btn-shop,
+.shop .btn-shop:focus-visible {
   transform: scale(1) skewY(0);
+  opacity: 1;
 }
 
-.shop .card:not(:hover) .btn-shop {
+.shop .card:not(:hover):not(:focus):not(:focus-within):not(.is-flipped) .btn-shop:not(:focus-visible) {
   opacity: 0;
 }
 

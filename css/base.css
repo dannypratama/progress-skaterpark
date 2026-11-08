@@ -26,6 +26,23 @@ body {
   -webkit-user-select: none;
 }
 
+/* Interaksi & Afordansi Kursor (R-39) */
+button,
+select,
+summary,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+label[for] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
 ::selection {
   color: #fff;
   background: var(--black);

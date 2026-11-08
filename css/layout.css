@@ -13,6 +13,7 @@
   font-weight: 500;
   text-transform: uppercase;
   position: relative;
+  overflow: hidden;
 }
 
 .navbar .menu-right ul {
@@ -32,12 +33,14 @@
 .navbar .nav-link {
   color: var(--black);
   margin: 0.5em;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .active .nav-link {
   color: var(--black);
   border-bottom: 3px solid var(--primary);
 }
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible {
   background: var(--primary);
   color: white;
 }
@@ -49,47 +52,37 @@
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Animasi hover menu: teks pertama ("first") lari keluar layar,
-   teks kedua ("second") masuk menggantikan dari atas.
-   translateX 10000% = animasi lari keluar, bukan nilai posisi akhir. */
-.menu-left ul li a .first {
-  position: absolute;
-  transform: translateY(0%);
-  color: var(--black);
-  transition: all 0.8s ease;
-}
-.menu-left ul li a .second {
-  position: relative;
-  display: block;
-
-  transition: all 0.8s ease;
-}
-
-.menu-left ul li a:hover .first {
-  transform: translateX(10000%);
-}
-.menu-left ul li a:hover .second {
-  transform: translateY(0);
-}
-
+/* Animasi hover menu: transisi vertikal teratur tanpa trik translasi ekstrem (R-19) */
+.menu-left ul li a .first,
 .menu-right ul li a .first {
   position: absolute;
   transform: translateY(0%);
+  opacity: 1;
   color: var(--black);
-  transition: all 0.8s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+.menu-left ul li a .second,
 .menu-right ul li a .second {
   position: relative;
   display: block;
-
-  transition: all 0.8s ease;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.menu-right ul li a:hover .first {
-  transform: translateX(-10000%);
+.menu-left ul li a:hover .first,
+.menu-left ul li a:focus-visible .first,
+.menu-right ul li a:hover .first,
+.menu-right ul li a:focus-visible .first {
+  transform: translateY(-100%);
+  opacity: 0;
 }
-.menu-right ul li a:hover .second {
+.menu-left ul li a:hover .second,
+.menu-left ul li a:focus-visible .second,
+.menu-right ul li a:hover .second,
+.menu-right ul li a:focus-visible .second {
   transform: translateY(0);
+  opacity: 1;
 }
 
 /* --------------------- Tab Bar (mobile) --------------------- */
@@ -103,27 +96,32 @@
 }
 .tabbar a {
   text-decoration: none;
-  display: block;
-  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px; /* Target sentuh minimal 44-48px (R-03 / R-11) */
+  font-size: 0.65rem;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 6px 2px;
   width: 100%;
   color: white;
   font-weight: 500;
   text-transform: uppercase;
   background: rgba(3, 3, 3, 0.8);
   backdrop-filter: blur(4px);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .tabbar a i {
   display: block;
-  font-size: 2em;
-  min-height: 20px;
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 
-.tabbar a:hover {
-  color: var(--black);
+.tabbar a:hover,
+.tabbar a:focus-visible {
+  color: var(--white);
   background: var(--primary);
 }
 
