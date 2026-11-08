@@ -17,6 +17,8 @@ berita, serta form pemesanan kursus dan kontak.
 ## Struktur
 
 ```
+├── assets/
+│   └── images/         # Seluruh aset gambar, logo, produk, dan latar belakang lokal
 ├── index.html          # Halaman utama (home, about, gallery, shop, news, contact)
 ├── checkout.html       # Halaman kontak & channel pemesanan (Shopee, Instagram, WhatsApp)
 ├── css/
@@ -42,7 +44,7 @@ python -m http.server
 
 - Form pemesanan dan kontak hanya melakukan validasi di browser; belum ada
   backend pengirim pesan (misal Netlify Forms).
-- Gambar produk/logo di-host di i.ibb.co.com, foto di Unsplash.
+- Seluruh aset gambar dan animasi tersimpan lokal di dalam repositori (bebas ketergantungan CDN eksternal).
 - Deploy otomatis ke Netlify setiap push ke `main`.
 
 ## Author
