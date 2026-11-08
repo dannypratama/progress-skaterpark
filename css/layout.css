@@ -275,7 +275,10 @@ footer .copyright {
   font-size: 0.8rem;
 }
 
-footer h4 {
+/* Brand footer memakai <p class="h4"> (bukan <h4>) demi hierarki heading;
+   selector diperluas agar font Rock Salt tetap tertempel sesuai desain asli */
+footer h4,
+footer .h4 {
   text-transform: uppercase;
   font-family: var(--font-rocksalt);
   font-weight: 600;
@@ -286,6 +289,7 @@ footer h4 {
   transition: all 0.5s ease-in-out;
 }
 
-footer h4:hover {
+footer h4:hover,
+footer .h4:hover {
   transform: scale(1.4);
 }
