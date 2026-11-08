@@ -1,16 +1,52 @@
 /* base.css - font, design tokens, reset, dan gaya global */
 
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.cdnfonts.com/css/jetick?styles=167948");
-@import url("https://fonts.cdnfonts.com/css/thoughts");
+/* Fonts Lokal (Self-hosted, bebas blokir CDN & instan tanpa FOUT) */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/Montserrat-VariableFont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/Montserrat-Italic-VariableFont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rock Salt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/RockSalt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Thoughts";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/THOUGHTS.woff") format("woff");
+}
+
+@font-face {
+  font-family: "JETICK";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Jetick-JRYBM.woff") format("woff");
+}
 
 :root {
   --primary: #dc3545;
   --secondary: #bcd3fc;
   --black: #2c3031;
   --white: #ffffff;
-  --font-montserrat: "Montserrat";
+  --font-montserrat: "Montserrat", system-ui, -apple-system, sans-serif;
   --font-rocksalt: "Rock Salt", cursive;
   --font-thoughts: "Thoughts", sans-serif;
   --font-jetick: "JETICK", sans-serif;
@@ -79,11 +115,12 @@ section {
   text-transform: uppercase;
   font-family: var(--font-thoughts);
   font-size: 3rem;
+  z-index: 1;
 }
 
 /* Teks outline besar di belakang judul (About Us, Gallery, Shop, News, Contact) */
 .container .row .bg-title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jetick), "Arial Black", sans-serif;
   text-transform: uppercase;
   position: absolute;
   left: 0;
@@ -92,9 +129,12 @@ section {
   line-height: 0;
   font-size: 7rem;
   color: transparent;
-  opacity: 0.3;
+  opacity: 0.25;
   font-weight: 900;
   -webkit-text-stroke: 2px var(--black);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
 }
 
 /* --------------------- Tombol Read More --------------------- */
