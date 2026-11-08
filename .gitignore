@@ -1,0 +1,16 @@
+# Sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Artefak lokal
+node_modules/
+*.log
+
+# Folder kerja ZCode
+.zcode/
