@@ -1,0 +1,151 @@
+/* base.css - font, design tokens, reset, dan gaya global */
+
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/jetick?styles=167948");
+@import url("https://fonts.cdnfonts.com/css/thoughts");
+
+:root {
+  --primary: #dc3545;
+  --secondary: #bcd3fc;
+  --black: #2c3031;
+  --white: #ffffff;
+  --font-montserrat: "Montserrat";
+  --font-rocksalt: "Rock Salt", cursive;
+  --font-thoughts: "Thoughts", sans-serif;
+  --font-jetick: "JETICK", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-montserrat);
+  -webkit-user-select: none;
+}
+
+::selection {
+  color: #fff;
+  background: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+.ri-star-s-fill {
+  color: var(--primary);
+}
+
+/* Scrollbar disembunyikan (1px) supaya galeri horizontal murni efek parallax.
+   Catatan: hanya berlaku di browser ber-WebKit (Chrome, Edge, Safari). */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+
+/* --------------------- Judul Section --------------------- */
+
+section {
+  scroll-margin-top: 2rem;
+}
+
+.container .row .title {
+  position: relative;
+  text-transform: uppercase;
+  font-family: var(--font-thoughts);
+  font-size: 3rem;
+}
+
+/* Teks outline besar di belakang judul (About Us, Gallery, Shop, News, Contact) */
+.container .row .bg-title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.8rem;
+  line-height: 0;
+  font-size: 7rem;
+  color: transparent;
+  opacity: 0.3;
+  font-weight: 900;
+  -webkit-text-stroke: 2px var(--black);
+}
+
+/* --------------------- Tombol Read More --------------------- */
+
+.btn-read-more {
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  position: relative;
+
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5rem;
+}
+
+.btn-read-more a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.btn-read-more::after,
+.btn-read-more::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-read-more::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.btn-read-more::after {
+  transform: translate(10px, 10px);
+  width: 50px;
+  height: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.btn-read-more:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.btn-read-more:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.btn-read-more:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
